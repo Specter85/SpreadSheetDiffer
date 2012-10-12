@@ -1,0 +1,10 @@
+Debug/
+ipch/
+x64/
+save/
+bin/
+obj/
+
+*.zip
+*.sdf
+*.docx
