@@ -16,5 +16,53 @@ namespace SpreadSheetDiffer
         {
             InitializeComponent();
         }
+
+        // This is were the diffing code should go/start.
+        private void mDiff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mBook1Load_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog fWin = new OpenFileDialog();
+
+            fWin.DefaultExt = "xlsx";
+            fWin.Filter = "Excel Spreadsheets (*.xlsx)|*.xlsx";
+            fWin.InitialDirectory = 
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            if (fWin.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void mBook2Load_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog fWin = new OpenFileDialog();
+
+            fWin.DefaultExt = "xlsx";
+            fWin.Filter = "Excel Spreadsheets (*.xlsx)|*.xlsx";
+            fWin.InitialDirectory =
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            if (fWin.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
+
+        private void mCreate_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.SaveFileDialog fWin = new OpenFileDialog();
+
+            fWin.DefaultExt = "xlsx";
+            fWin.Filter = "Excel Spreadsheets (*.xlsx)|*.xlsx";
+            fWin.InitialDirectory =
+                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            if (fWin.ShowDialog() == DialogResult.OK)
+            {
+            }
+        }
     }
 }

@@ -66,6 +66,7 @@
             this.mBook1Load.TabIndex = 2;
             this.mBook1Load.Text = "Browse";
             this.mBook1Load.UseVisualStyleBackColor = true;
+            this.mBook1Load.Click += new System.EventHandler(this.mBook1Load_Click);
             // 
             // mBook2Load
             // 
@@ -75,6 +76,7 @@
             this.mBook2Load.TabIndex = 3;
             this.mBook2Load.Text = "Browse";
             this.mBook2Load.UseVisualStyleBackColor = true;
+            this.mBook2Load.Click += new System.EventHandler(this.mBook2Load_Click);
             // 
             // mSheet1Lbl
             // 
@@ -96,6 +98,7 @@
             // 
             // mBook1Sheet
             // 
+            this.mBook1Sheet.Enabled = false;
             this.mBook1Sheet.FormattingEnabled = true;
             this.mBook1Sheet.Location = new System.Drawing.Point(291, 29);
             this.mBook1Sheet.Name = "mBook1Sheet";
@@ -104,6 +107,7 @@
             // 
             // mBook2Sheet
             // 
+            this.mBook2Sheet.Enabled = false;
             this.mBook2Sheet.FormattingEnabled = true;
             this.mBook2Sheet.Location = new System.Drawing.Point(291, 70);
             this.mBook2Sheet.Name = "mBook2Sheet";
@@ -135,6 +139,7 @@
             this.mCreate.TabIndex = 10;
             this.mCreate.Text = "Browse";
             this.mCreate.UseVisualStyleBackColor = true;
+            this.mCreate.Click += new System.EventHandler(this.mCreate_Click);
             // 
             // mDiff
             // 
@@ -144,6 +149,7 @@
             this.mDiff.TabIndex = 11;
             this.mDiff.Text = "Diff";
             this.mDiff.UseVisualStyleBackColor = true;
+            this.mDiff.Click += new System.EventHandler(this.mDiff_Click);
             // 
             // Form1
             // 
