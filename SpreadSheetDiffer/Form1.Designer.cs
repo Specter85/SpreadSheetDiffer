@@ -98,6 +98,7 @@
             // 
             // mBook1Sheet
             // 
+            this.mBook1Sheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mBook1Sheet.Enabled = false;
             this.mBook1Sheet.FormattingEnabled = true;
             this.mBook1Sheet.Location = new System.Drawing.Point(291, 29);
@@ -107,6 +108,7 @@
             // 
             // mBook2Sheet
             // 
+            this.mBook2Sheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mBook2Sheet.Enabled = false;
             this.mBook2Sheet.FormattingEnabled = true;
             this.mBook2Sheet.Location = new System.Drawing.Point(291, 70);
