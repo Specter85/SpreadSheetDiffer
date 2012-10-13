@@ -60,7 +60,7 @@
             // 
             // mBook1Load
             // 
-            this.mBook1Load.Location = new System.Drawing.Point(209, 27);
+            this.mBook1Load.Location = new System.Drawing.Point(209, 28);
             this.mBook1Load.Name = "mBook1Load";
             this.mBook1Load.Size = new System.Drawing.Size(75, 23);
             this.mBook1Load.TabIndex = 2;
@@ -70,7 +70,7 @@
             // 
             // mBook2Load
             // 
-            this.mBook2Load.Location = new System.Drawing.Point(209, 70);
+            this.mBook2Load.Location = new System.Drawing.Point(209, 71);
             this.mBook2Load.Name = "mBook2Load";
             this.mBook2Load.Size = new System.Drawing.Size(75, 23);
             this.mBook2Load.TabIndex = 3;
@@ -90,7 +90,7 @@
             // mSheet2Lbl
             // 
             this.mSheet2Lbl.AutoSize = true;
-            this.mSheet2Lbl.Location = new System.Drawing.Point(16, 56);
+            this.mSheet2Lbl.Location = new System.Drawing.Point(13, 56);
             this.mSheet2Lbl.Name = "mSheet2Lbl";
             this.mSheet2Lbl.Size = new System.Drawing.Size(59, 13);
             this.mSheet2Lbl.TabIndex = 5;
@@ -111,7 +111,7 @@
             this.mBook2Sheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mBook2Sheet.Enabled = false;
             this.mBook2Sheet.FormattingEnabled = true;
-            this.mBook2Sheet.Location = new System.Drawing.Point(291, 70);
+            this.mBook2Sheet.Location = new System.Drawing.Point(291, 72);
             this.mBook2Sheet.Name = "mBook2Sheet";
             this.mBook2Sheet.Size = new System.Drawing.Size(135, 21);
             this.mBook2Sheet.TabIndex = 7;
@@ -127,7 +127,7 @@
             // 
             // mOutFileName
             // 
-            this.mOutFileName.Location = new System.Drawing.Point(13, 116);
+            this.mOutFileName.Location = new System.Drawing.Point(12, 116);
             this.mOutFileName.Name = "mOutFileName";
             this.mOutFileName.ReadOnly = true;
             this.mOutFileName.Size = new System.Drawing.Size(190, 20);
@@ -135,7 +135,7 @@
             // 
             // mCreate
             // 
-            this.mCreate.Location = new System.Drawing.Point(209, 114);
+            this.mCreate.Location = new System.Drawing.Point(209, 115);
             this.mCreate.Name = "mCreate";
             this.mCreate.Size = new System.Drawing.Size(75, 23);
             this.mCreate.TabIndex = 10;
@@ -145,7 +145,7 @@
             // 
             // mDiff
             // 
-            this.mDiff.Location = new System.Drawing.Point(351, 113);
+            this.mDiff.Location = new System.Drawing.Point(351, 115);
             this.mDiff.Name = "mDiff";
             this.mDiff.Size = new System.Drawing.Size(75, 23);
             this.mDiff.TabIndex = 11;
