@@ -116,6 +116,7 @@ namespace SpreadSheetDiffer
             if (fWin.ShowDialog() == DialogResult.OK)
             {
                 outFile = fWin.FileName;
+                mOutFileName.Text = fWin.FileName;
             }
         }
     }
