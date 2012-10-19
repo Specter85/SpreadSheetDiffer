@@ -34,8 +34,8 @@
             this.mBook2Load = new System.Windows.Forms.Button();
             this.mSheet1Lbl = new System.Windows.Forms.Label();
             this.mSheet2Lbl = new System.Windows.Forms.Label();
-            this.mBook1Sheet = new System.Windows.Forms.ComboBox();
-            this.mBook2Sheet = new System.Windows.Forms.ComboBox();
+            this.mBook1SheetBox = new System.Windows.Forms.ComboBox();
+            this.mBook2SheetBox = new System.Windows.Forms.ComboBox();
             this.mOutputFileLbl = new System.Windows.Forms.Label();
             this.mOutFileName = new System.Windows.Forms.TextBox();
             this.mCreate = new System.Windows.Forms.Button();
@@ -98,23 +98,23 @@
             // 
             // mBook1Sheet
             // 
-            this.mBook1Sheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mBook1Sheet.Enabled = false;
-            this.mBook1Sheet.FormattingEnabled = true;
-            this.mBook1Sheet.Location = new System.Drawing.Point(291, 29);
-            this.mBook1Sheet.Name = "mBook1Sheet";
-            this.mBook1Sheet.Size = new System.Drawing.Size(135, 21);
-            this.mBook1Sheet.TabIndex = 6;
+            this.mBook1SheetBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mBook1SheetBox.Enabled = false;
+            this.mBook1SheetBox.FormattingEnabled = true;
+            this.mBook1SheetBox.Location = new System.Drawing.Point(291, 29);
+            this.mBook1SheetBox.Name = "mBook1Sheet";
+            this.mBook1SheetBox.Size = new System.Drawing.Size(135, 21);
+            this.mBook1SheetBox.TabIndex = 6;
             // 
-            // mBook2Sheet
+            // mBook2SheetBox
             // 
-            this.mBook2Sheet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.mBook2Sheet.Enabled = false;
-            this.mBook2Sheet.FormattingEnabled = true;
-            this.mBook2Sheet.Location = new System.Drawing.Point(291, 72);
-            this.mBook2Sheet.Name = "mBook2Sheet";
-            this.mBook2Sheet.Size = new System.Drawing.Size(135, 21);
-            this.mBook2Sheet.TabIndex = 7;
+            this.mBook2SheetBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mBook2SheetBox.Enabled = false;
+            this.mBook2SheetBox.FormattingEnabled = true;
+            this.mBook2SheetBox.Location = new System.Drawing.Point(291, 72);
+            this.mBook2SheetBox.Name = "mBook2SheetBox";
+            this.mBook2SheetBox.Size = new System.Drawing.Size(135, 21);
+            this.mBook2SheetBox.TabIndex = 7;
             // 
             // mOutputFileLbl
             // 
@@ -161,8 +161,8 @@
             this.Controls.Add(this.mCreate);
             this.Controls.Add(this.mOutFileName);
             this.Controls.Add(this.mOutputFileLbl);
-            this.Controls.Add(this.mBook2Sheet);
-            this.Controls.Add(this.mBook1Sheet);
+            this.Controls.Add(this.mBook2SheetBox);
+            this.Controls.Add(this.mBook1SheetBox);
             this.Controls.Add(this.mSheet2Lbl);
             this.Controls.Add(this.mSheet1Lbl);
             this.Controls.Add(this.mBook2Load);
@@ -186,8 +186,8 @@
         private System.Windows.Forms.Button mBook2Load;
         private System.Windows.Forms.Label mSheet1Lbl;
         private System.Windows.Forms.Label mSheet2Lbl;
-        private System.Windows.Forms.ComboBox mBook1Sheet;
-        private System.Windows.Forms.ComboBox mBook2Sheet;
+        private System.Windows.Forms.ComboBox mBook1SheetBox;
+        private System.Windows.Forms.ComboBox mBook2SheetBox;
         private System.Windows.Forms.Label mOutputFileLbl;
         private System.Windows.Forms.TextBox mOutFileName;
         private System.Windows.Forms.Button mCreate;

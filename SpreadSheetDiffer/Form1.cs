@@ -73,13 +73,13 @@ namespace SpreadSheetDiffer
                 mBook1Sheets = (Excel.Sheets)(mBook1.Sheets);
 
                 // Enable and clear the combobox for the first workbook's worksheets.
-                mBook1Sheet.Enabled = true;
-                mBook1Sheet.Items.Clear();
+                mBook1SheetBox.Enabled = true;
+                mBook1SheetBox.Items.Clear();
 
                 // Populate the first workbook's combobox.
                 int numSheets = mBook1Sheets.Count;
                 for(int i = 1; i <= numSheets; i++) {
-                    mBook1Sheet.Items.Add(((Excel._Worksheet)(mBook1Sheets.Item[i])).Name);
+                    mBook1SheetBox.Items.Add(((Excel._Worksheet)(mBook1Sheets.Item[i])).Name);
                 }
             }
         }
@@ -114,14 +114,14 @@ namespace SpreadSheetDiffer
                 mBook2Sheets = (Excel.Sheets)(mBook2.Sheets);
 
                 // Enable and clear the combobox for the second workbook's worksheets.
-                mBook2Sheet.Enabled = true;
-                mBook2Sheet.Items.Clear();
+                mBook2SheetBox.Enabled = true;
+                mBook2SheetBox.Items.Clear();
 
                 // Populate the combobox for the second workbook.
                 int numSheets = mBook2Sheets.Count;
                 for (int i = 1; i <= numSheets; i++)
                 {
-                    mBook2Sheet.Items.Add(((Excel._Worksheet)(mBook2Sheets.Item[i])).Name);
+                    mBook2SheetBox.Items.Add(((Excel._Worksheet)(mBook2Sheets.Item[i])).Name);
                 }
             }
         }
