@@ -51,13 +51,27 @@ namespace SpreadSheetDiffer
             temp[0] = "Cell";
             temp[1] = "Old Value";
             temp[2] = "New Value";
-            sb.AppendLine(string.Join(delimiter, temp[3]));
+            sb.AppendLine(string.Join(delimiter, temp));//[3]));
 
             // old spreadsheet
-            Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
+            //Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
+            Object Item1 = mBook1SheetBox.SelectedItem;
+            if (Item1 == null)
+            {
+                MessageBox.Show("Please select a worksheet for Workbook 1");
+                return;
+            }
+            Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1Sheets.Item[Item1.ToString()];
             
             // new spreadsheet
-            Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2.ActiveSheet;
+            //Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2.ActiveSheet;
+            Object Item2 = mBook2SheetBox.SelectedItem;
+            if (Item1 == null)
+            {
+                MessageBox.Show("Please select a worksheet for Workbook 2");
+                return;
+            }
+            Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2Sheets.Item[Item2.ToString()];
             
             //create range objects for gathering the bounds of the spreadsheets
             Excel.Range range1 = sheet1.UsedRange;
@@ -82,23 +96,37 @@ namespace SpreadSheetDiffer
             {
                 for (int j = 1; j <= endRow; j++)
                 {
-                    if (sheet1[i, j] != sheet2[i, j])
+                    string test1 = cellStr(sheet1.Cells[j, i]);
+                    string test2 = cellStr(sheet2.Cells[j, i]);
+                    if (cellStr(sheet1.Cells[j, i]) != cellStr(sheet2.Cells[j, i]))
                     {
-                        temp[0] = convert(i, j);
-                        temp[1] = sheet1[i, j];
-                        temp[2] = sheet2[i, j];
-                        sb.AppendLine(String.Join(delimiter, temp[3]));
+                        temp[0] = convert(j, i);
+                        temp[1] = cellStr(sheet1.Cells[j, i]);
+                        temp[2] = cellStr(sheet2.Cells[j, i]);
+                        sb.AppendLine(String.Join(delimiter, temp));//[3]));
                     }
                 }
             }
 
             // necessary check for existing file
-            if (!File.Exists(outFile))
-            {
-                File.Create(outFile);
-            }
+            //if (!File.Exists(outFile))
+            //{
+            //    File.Create(outFile);
+            //}
             File.WriteAllText(outFile, sb.ToString()); // fill the file
             
+        }
+
+        string cellStr(Excel.Range rhs)
+        {
+            if (rhs == null || rhs.Value2 == null)
+            {
+                return "";
+            }
+            else
+            {
+                return rhs.Value2.ToString();
+            }
         }
 
 
