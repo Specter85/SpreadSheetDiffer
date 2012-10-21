@@ -96,7 +96,7 @@
             this.mSheet2Lbl.TabIndex = 5;
             this.mSheet2Lbl.Text = "Sheet Two";
             // 
-            // mBook1Sheet
+            // mBook1SheetBox
             // 
             this.mBook1SheetBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mBook1SheetBox.Enabled = false;

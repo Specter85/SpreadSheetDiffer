@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,98 @@ namespace SpreadSheetDiffer
         // This is were the diffing code should go/start.
         private void mDiff_Click(object sender, EventArgs e)
         {
+            // file building utilities
+            String delimiter = ",";
+            StringBuilder sb = new StringBuilder();
+            String[] temp = new String[3];
 
+            // write the first line in the .csv file
+            temp[0] = "Cell";
+            temp[1] = "Old Value";
+            temp[2] = "New Value";
+            sb.AppendLine(string.Join(delimiter, temp[3]));
+
+            // old spreadsheet
+            Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
+            
+            // new spreadsheet
+            Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2.ActiveSheet;
+            
+            //create range objects for gathering the bounds of the spreadsheets
+            Excel.Range range1 = sheet1.UsedRange;
+            Excel.Range range2 = sheet2.UsedRange;
+
+            // get the final filled row and column coordinate for sheet1
+            int endRow1 = range1.Rows.CurrentRegion.EntireRow.Count;
+            int endCol1 = range1.Columns.CurrentRegion.EntireColumn.Count;
+
+            // get the final filled row and column coordinate for sheet2
+            int endRow2 = range2.Rows.CurrentRegion.EntireRow.Count;
+            int endCol2 = range2.Columns.CurrentRegion.EntireColumn.Count;
+
+            // use the larger number for both rows and columns
+            int endRow = (endRow1 > endRow2) ? endRow1 : endRow2;
+            int endCol = (endCol1 > endCol2) ? endCol1 : endCol2;
+
+            
+            // diff the two files, and add a line onto the StringBuilder
+            // if the cells are different
+            for (int i = 1; i <= endCol; i++)
+            {
+                for (int j = 1; j <= endRow; j++)
+                {
+                    if (sheet1[i, j] != sheet2[i, j])
+                    {
+                        temp[0] = convert(i, j);
+                        temp[1] = sheet1[i, j];
+                        temp[2] = sheet2[i, j];
+                        sb.AppendLine(String.Join(delimiter, temp[3]));
+                    }
+                }
+            }
+
+            // necessary check for existing file
+            if (!File.Exists(outFile))
+            {
+                File.Create(outFile);
+            }
+            File.WriteAllText(outFile, sb.ToString()); // fill the file
+            
+        }
+
+
+        // Converts a set of coordinates into an Excel coordinate.
+        // Utility function for formatting output.
+        private String convert(int i, int j)
+        {
+            String outputString = "";
+            int [] letter = new int[7];
+            for (int a = 0; a < 7; a++)
+            {
+                letter[a] = (int)Math.Pow(26, a);
+            }
+            int [] output = new int[7];
+            for (int k = 6; k >= 0; k--)
+            {
+                if (j > letter[k])
+                {
+                    output[k] = j / letter[k];
+                    j = j % letter[k];
+                }
+                else
+                {
+                    output[k] = -1;
+                }
+            }
+            char help = 'A';
+            char[] print = new char[7];
+            for (int l = 0; l < 7; l++)
+            {
+                print[l] = (char)(help + output[l]);
+                if (print[l] >= 'A') outputString += print[l];
+            }
+            outputString += i.ToString();
+            return outputString;
         }
 
         // Event handler for the top browse button.
