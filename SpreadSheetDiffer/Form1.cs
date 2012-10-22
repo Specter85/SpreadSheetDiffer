@@ -132,7 +132,7 @@ namespace SpreadSheetDiffer
 
         // Converts a set of coordinates into an Excel coordinate.
         // Utility function for formatting output.
-        private String convert(int i, int j)
+        private String convert(int j, int i)
         {
             String outputString = "";
             int [] letter = new int[7];
