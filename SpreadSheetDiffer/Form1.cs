@@ -96,13 +96,13 @@ namespace SpreadSheetDiffer
             {
                 for (int j = 1; j <= endRow; j++)
                 {
-                    string test1 = cellStr(sheet1.Cells[j, i]);
-                    string test2 = cellStr(sheet2.Cells[j, i]);
-                    if (cellStr(sheet1.Cells[j, i]) != cellStr(sheet2.Cells[j, i]))
+                    //string test1 = cellStr(sheet1.Cells[i, j]);
+                    //string test2 = cellStr(sheet2.Cells[i, j]);
+                    if (cellStr(sheet1.Cells[i, j]) != cellStr(sheet2.Cells[i, j]))
                     {
-                        temp[0] = convert(j, i);
-                        temp[1] = cellStr(sheet1.Cells[j, i]);
-                        temp[2] = cellStr(sheet2.Cells[j, i]);
+                        temp[0] = convert(i, j);
+                        temp[1] = cellStr(sheet1.Cells[i, j]);
+                        temp[2] = cellStr(sheet2.Cells[i, j]);
                         sb.AppendLine(String.Join(delimiter, temp));//[3]));
                     }
                 }
@@ -135,30 +135,15 @@ namespace SpreadSheetDiffer
         private String convert(int j, int i)
         {
             String outputString = "";
-            int [] letter = new int[7];
-            for (int a = 0; a < 7; a++)
+            int rem;
+
+            // starts with Z, thus 26 % 26 will get the proper letter, Z
+            String chars = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
+            while (j != 0)
             {
-                letter[a] = (int)Math.Pow(26, a);
-            }
-            int [] output = new int[7];
-            for (int k = 6; k >= 0; k--)
-            {
-                if (j > letter[k])
-                {
-                    output[k] = j / letter[k];
-                    j = j % letter[k];
-                }
-                else
-                {
-                    output[k] = -1;
-                }
-            }
-            char help = 'A';
-            char[] print = new char[7];
-            for (int l = 0; l < 7; l++)
-            {
-                print[l] = (char)(help + output[l]);
-                if (print[l] >= 'A') outputString += print[l];
+                rem = j % 26;
+                j /= 26;
+                outputString += chars[rem];
             }
             outputString += i.ToString();
             return outputString;
