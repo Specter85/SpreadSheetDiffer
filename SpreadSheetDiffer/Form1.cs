@@ -132,21 +132,24 @@ namespace SpreadSheetDiffer
 
         // Converts a set of coordinates into an Excel coordinate.
         // Utility function for formatting output.
+        // Obtained from StackOverflow.net, User: astander
+        // http://stackoverflow.com/questions/1951517/convert-a-to-1-b-to-2-z-to-26-and-then-aa-to-27-ab-to-28-column-indexes-to
+        // on October 27, 2012
         private String convert(int j, int i)
         {
-            String outputString = "";
-            int rem;
-
-            // starts with Z, thus 26 % 26 will get the proper letter, Z
-            String chars = "ZABCDEFGHIJKLMNOPQRSTUVWXY";
-            while (j != 0)
+            String columnString = "";
+            decimal columnNumber = j;
+            while (columnNumber > 0)
             {
-                rem = j % 26;
-                j /= 26;
-                outputString += chars[rem];
+                decimal currentLetterNumber = (columnNumber - 1) % 26;
+                char currentLetter = (char)(currentLetterNumber + 65);
+                columnString = currentLetter + columnString;
+                columnNumber = (columnNumber - (currentLetterNumber + 1)) / 26;
             }
-            outputString += i.ToString();
-            return outputString;
+            
+
+            columnString += i.ToString();
+            return columnString;
         }
 
         // Event handler for the top browse button.
