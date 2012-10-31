@@ -51,7 +51,7 @@ namespace SpreadSheetDiffer
             temp[0] = "Cell";
             temp[1] = "Old Value";
             temp[2] = "New Value";
-            sb.AppendLine(string.Join(delimiter, temp));//[3]));
+            sb.AppendLine(string.Join(delimiter, temp));
 
             // old spreadsheet
             //Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
@@ -89,32 +89,22 @@ namespace SpreadSheetDiffer
             int endRow = (endRow1 > endRow2) ? endRow1 : endRow2;
             int endCol = (endCol1 > endCol2) ? endCol1 : endCol2;
 
-            
             // diff the two files, and add a line onto the StringBuilder
             // if the cells are different
             for (int i = 1; i <= endCol; i++)
             {
                 for (int j = 1; j <= endRow; j++)
                 {
-                    //string test1 = cellStr(sheet1.Cells[i, j]);
-                    //string test2 = cellStr(sheet2.Cells[i, j]);
-                    if (cellStr(sheet1.Cells[i, j]) != cellStr(sheet2.Cells[i, j]))
+                    if (cellStr(sheet1.Cells[j, i]) != cellStr(sheet2.Cells[j, i]))
                     {
-                        temp[0] = convert(i, j);
-                        temp[1] = cellStr(sheet1.Cells[i, j]);
-                        temp[2] = cellStr(sheet2.Cells[i, j]);
-                        sb.AppendLine(String.Join(delimiter, temp));//[3]));
+                        temp[0] = convert(j, i);
+                        temp[1] = cellStr(sheet1.Cells[j, i]);
+                        temp[2] = cellStr(sheet2.Cells[j, i]);
+                        sb.AppendLine(String.Join(delimiter, temp));
                     }
                 }
             }
-
-            // necessary check for existing file
-            //if (!File.Exists(outFile))
-            //{
-            //    File.Create(outFile);
-            //}
             File.WriteAllText(outFile, sb.ToString()); // fill the file
-            
         }
 
         string cellStr(Excel.Range rhs)
@@ -135,7 +125,7 @@ namespace SpreadSheetDiffer
         // Obtained from StackOverflow.net, User: astander
         // http://stackoverflow.com/questions/1951517/convert-a-to-1-b-to-2-z-to-26-and-then-aa-to-27-ab-to-28-column-indexes-to
         // on October 27, 2012
-        private String convert(int j, int i)
+        private String convert(int i, int j)
         {
             String columnString = "";
             decimal columnNumber = j;
