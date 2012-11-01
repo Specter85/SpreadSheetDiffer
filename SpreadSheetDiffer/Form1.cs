@@ -116,14 +116,13 @@ namespace SpreadSheetDiffer
 
         string cellStr(Excel.Range rhs)
         {
-            if (rhs == null || rhs.Text == null)//rhs.Value2 == null)
+            if (rhs == null || rhs.Value2 == null)
             {
                 return "";
             }
             else
             {
-                return rhs.Text.ToString();
-                //return rhs.Value2.ToString();
+                return rhs.Value2.ToString();
             }
         }
 
