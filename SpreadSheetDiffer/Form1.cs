@@ -72,6 +72,9 @@ namespace SpreadSheetDiffer
                 return;
             }
             Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2Sheets.Item[Item2.ToString()];
+
+            mDiff.Enabled = false;
+            Cursor.Current = Cursors.WaitCursor;
             
             //create range objects for gathering the bounds of the spreadsheets
             Excel.Range range1 = sheet1.UsedRange;
@@ -114,18 +117,22 @@ namespace SpreadSheetDiffer
             //    File.Create(outFile);
             //}
             File.WriteAllText(outFile, sb.ToString()); // fill the file
+
+            mDiff.Enabled = true;
+            Cursor.Current = Cursors.Default;
             
         }
 
         string cellStr(Excel.Range rhs)
         {
-            if (rhs == null || rhs.Value2 == null)
+            if (rhs == null || rhs.Text == null)//rhs.Value2 == null)
             {
                 return "";
             }
             else
             {
-                return rhs.Value2.ToString();
+                return rhs.Text.ToString();
+                //return rhs.Value2.ToString();
             }
         }
 
