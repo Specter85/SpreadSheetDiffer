@@ -47,7 +47,7 @@
             this.mBook1File.Location = new System.Drawing.Point(12, 29);
             this.mBook1File.Name = "mBook1File";
             this.mBook1File.ReadOnly = true;
-            this.mBook1File.Size = new System.Drawing.Size(191, 22);
+            this.mBook1File.Size = new System.Drawing.Size(191, 20);
             this.mBook1File.TabIndex = 0;
             // 
             // mBook2File
@@ -55,7 +55,7 @@
             this.mBook2File.Location = new System.Drawing.Point(12, 72);
             this.mBook2File.Name = "mBook2File";
             this.mBook2File.ReadOnly = true;
-            this.mBook2File.Size = new System.Drawing.Size(191, 22);
+            this.mBook2File.Size = new System.Drawing.Size(191, 20);
             this.mBook2File.TabIndex = 1;
             // 
             // mBook1Load
@@ -83,7 +83,7 @@
             this.mSheet1Lbl.AutoSize = true;
             this.mSheet1Lbl.Location = new System.Drawing.Point(13, 13);
             this.mSheet1Lbl.Name = "mSheet1Lbl";
-            this.mSheet1Lbl.Size = new System.Drawing.Size(76, 17);
+            this.mSheet1Lbl.Size = new System.Drawing.Size(58, 13);
             this.mSheet1Lbl.TabIndex = 4;
             this.mSheet1Lbl.Text = "Sheet One";
             // 
@@ -92,7 +92,7 @@
             this.mSheet2Lbl.AutoSize = true;
             this.mSheet2Lbl.Location = new System.Drawing.Point(13, 56);
             this.mSheet2Lbl.Name = "mSheet2Lbl";
-            this.mSheet2Lbl.Size = new System.Drawing.Size(75, 17);
+            this.mSheet2Lbl.Size = new System.Drawing.Size(59, 13);
             this.mSheet2Lbl.TabIndex = 5;
             this.mSheet2Lbl.Text = "Sheet Two";
             // 
@@ -101,9 +101,9 @@
             this.mBook1SheetBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mBook1SheetBox.Enabled = false;
             this.mBook1SheetBox.FormattingEnabled = true;
-            this.mBook1SheetBox.Location = new System.Drawing.Point(291, 27);
+            this.mBook1SheetBox.Location = new System.Drawing.Point(291, 29);
             this.mBook1SheetBox.Name = "mBook1SheetBox";
-            this.mBook1SheetBox.Size = new System.Drawing.Size(135, 24);
+            this.mBook1SheetBox.Size = new System.Drawing.Size(135, 21);
             this.mBook1SheetBox.TabIndex = 6;
             // 
             // mBook2SheetBox
@@ -113,7 +113,7 @@
             this.mBook2SheetBox.FormattingEnabled = true;
             this.mBook2SheetBox.Location = new System.Drawing.Point(291, 72);
             this.mBook2SheetBox.Name = "mBook2SheetBox";
-            this.mBook2SheetBox.Size = new System.Drawing.Size(135, 24);
+            this.mBook2SheetBox.Size = new System.Drawing.Size(135, 21);
             this.mBook2SheetBox.TabIndex = 7;
             // 
             // mOutputFileLbl
@@ -121,7 +121,7 @@
             this.mOutputFileLbl.AutoSize = true;
             this.mOutputFileLbl.Location = new System.Drawing.Point(13, 99);
             this.mOutputFileLbl.Name = "mOutputFileLbl";
-            this.mOutputFileLbl.Size = new System.Drawing.Size(77, 17);
+            this.mOutputFileLbl.Size = new System.Drawing.Size(58, 13);
             this.mOutputFileLbl.TabIndex = 8;
             this.mOutputFileLbl.Text = "Output File";
             // 
@@ -130,7 +130,7 @@
             this.mOutFileName.Location = new System.Drawing.Point(12, 116);
             this.mOutFileName.Name = "mOutFileName";
             this.mOutFileName.ReadOnly = true;
-            this.mOutFileName.Size = new System.Drawing.Size(190, 22);
+            this.mOutFileName.Size = new System.Drawing.Size(190, 20);
             this.mOutFileName.TabIndex = 9;
             // 
             // mCreate
@@ -156,7 +156,7 @@
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(432, 155);
+            this.ClientSize = new System.Drawing.Size(434, 151);
             this.Controls.Add(this.mDiff);
             this.Controls.Add(this.mCreate);
             this.Controls.Add(this.mOutFileName);
@@ -169,8 +169,8 @@
             this.Controls.Add(this.mBook1Load);
             this.Controls.Add(this.mBook2File);
             this.Controls.Add(this.mBook1File);
-            this.MaximumSize = new System.Drawing.Size(450, 200);
-            this.MinimumSize = new System.Drawing.Size(450, 200);
+            this.MaximumSize = new System.Drawing.Size(450, 190);
+            this.MinimumSize = new System.Drawing.Size(450, 190);
             this.Name = "Form1";
             this.Text = "SpreadSheet Differ";
             this.ResumeLayout(false);
