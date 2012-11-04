@@ -122,7 +122,7 @@ namespace SpreadSheetDiffer
             }
             else
             {
-                return rhs.Value2.ToString();
+                return "'" + rhs.Value2.ToString();
             }
         }
 
