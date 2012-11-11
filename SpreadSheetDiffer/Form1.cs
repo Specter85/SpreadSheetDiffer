@@ -37,6 +37,7 @@ namespace SpreadSheetDiffer
 
             mExcel = new Excel.Application();
             mExcel.Visible = false;
+            mExcel.Interactive = false;
         }
 
         // This is were the diffing code should go/start.
@@ -250,6 +251,11 @@ namespace SpreadSheetDiffer
                 outFile = fWin.FileName;
                 mOutFileName.Text = fWin.FileName;
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            mExcel.Interactive = true;
         }
     }
 }
