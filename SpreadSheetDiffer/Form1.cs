@@ -117,13 +117,13 @@ namespace SpreadSheetDiffer
 
         string cellStr(Excel.Range rhs)
         {
-            if (rhs == null || rhs.Value2 == null)
+            if (rhs == null || rhs.Formula == null)
             {
                 return "";
             }
             else
             {
-                return "'" + rhs.Value2.ToString();
+                return "'" + rhs.Formula.ToString();
             }
         }
 
