@@ -37,7 +37,6 @@ namespace SpreadSheetDiffer
 
             mExcel = new Excel.Application();
             mExcel.Visible = false;
-            mExcel.Interactive = false;
         }
 
         // This is were the diffing code should go/start.
@@ -82,12 +81,12 @@ namespace SpreadSheetDiffer
             Excel.Range range2 = sheet2.UsedRange;
 
             // get the final filled row and column coordinate for sheet1
-            int endRow1 = range1.Rows.CurrentRegion.EntireRow.Count;
-            int endCol1 = range1.Columns.CurrentRegion.EntireColumn.Count;
+            int endRow1 = range1.Rows.Count;
+            int endCol1 = range1.Columns.Count;
 
             // get the final filled row and column coordinate for sheet2
-            int endRow2 = range2.Rows.CurrentRegion.EntireRow.Count;
-            int endCol2 = range2.Columns.CurrentRegion.EntireColumn.Count;
+            int endRow2 = range2.Rows.Count;
+            int endCol2 = range2.Columns.Count;
 
             // use the larger number for both rows and columns
             int endRow = (endRow1 > endRow2) ? endRow1 : endRow2;
@@ -255,7 +254,6 @@ namespace SpreadSheetDiffer
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            mExcel.Interactive = true;
         }
     }
 }
