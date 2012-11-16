@@ -42,6 +42,12 @@ namespace SpreadSheetDiffer
         // This is were the diffing code should go/start.
         private void mDiff_Click(object sender, EventArgs e)
         {
+            if (outFile == null)
+            {
+                MessageBox.Show("Please select an output file.");
+                return;
+            }
+
             // file building utilities
             String delimiter = ",";
             StreamWriter oFile = new StreamWriter(outFile);
@@ -158,7 +164,7 @@ namespace SpreadSheetDiffer
 
             // Set the extensions and default folder path to be used by the dialog.
             fWin.DefaultExt = "xlsx";
-            fWin.Filter = "Excel Spreadsheets (*.xlsx)|*.xlsx";
+            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xlsx;*.csv";
             fWin.InitialDirectory = 
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -198,7 +204,7 @@ namespace SpreadSheetDiffer
 
             // Set the extensions and default folder path to be used by the dialog.
             fWin.DefaultExt = "xlsx";
-            fWin.Filter = "Excel Spreadsheets (*.xlsx)|*.xlsx";
+            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xlsx;*.csv";
             fWin.InitialDirectory =
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
