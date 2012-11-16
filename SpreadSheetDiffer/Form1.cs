@@ -44,17 +44,16 @@ namespace SpreadSheetDiffer
         {
             // file building utilities
             String delimiter = ",";
-            StringBuilder sb = new StringBuilder();
+            StreamWriter oFile = new StreamWriter(outFile);
             String[] temp = new String[3];
 
             // write the first line in the .csv file
             temp[0] = "Cell";
             temp[1] = "Old Value";
             temp[2] = "New Value";
-            sb.AppendLine(string.Join(delimiter, temp));
+            oFile.WriteLine(String.Join(delimiter, temp));
 
             // old spreadsheet
-            //Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
             Object Item1 = mBook1SheetBox.SelectedItem;
             if (Item1 == null)
             {
@@ -64,7 +63,6 @@ namespace SpreadSheetDiffer
             Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1Sheets.Item[Item1.ToString()];
             
             // new spreadsheet
-            //Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2.ActiveSheet;
             Object Item2 = mBook2SheetBox.SelectedItem;
             if (Item1 == null)
             {
@@ -73,6 +71,7 @@ namespace SpreadSheetDiffer
             }
             Excel._Worksheet sheet2 = (Excel._Worksheet)mBook2Sheets.Item[Item2.ToString()];
 
+            // Make the window wait.
             mDiff.Enabled = false;
             Cursor.Current = Cursors.WaitCursor;
             
@@ -103,12 +102,13 @@ namespace SpreadSheetDiffer
                         temp[0] = convert(j, i);
                         temp[1] = cellStr(sheet1.Cells[j, i]);
                         temp[2] = cellStr(sheet2.Cells[j, i]);
-                        sb.AppendLine(String.Join(delimiter, temp));
+                        oFile.WriteLine(String.Join(delimiter, temp));
                     }
                 }
             }
-            File.WriteAllText(outFile, sb.ToString()); // fill the file
 
+            // Close the file and make the window stop waiting.
+            oFile.Close();
             mDiff.Enabled = true;
             Cursor.Current = Cursors.Default;
             
@@ -254,6 +254,19 @@ namespace SpreadSheetDiffer
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Refrences to the first workbook to be diffed.
+            mBook1Sheets = null;
+            mBook1.Close();
+            mBook1 = null;
+
+            // Refrences to the second workbook to be diffed.
+            mBook2Sheets = null;
+            mBook2.Close();
+            mBook2 = null;
+
+            // Refrence to the instance of Microsoft Excel being used.
+            mExcel.Quit();
+            mExcel = null;
         }
     }
 }
