@@ -53,6 +53,11 @@ namespace SpreadSheetDiffer
             temp[2] = "New Value";
             sb.AppendLine(string.Join(delimiter, temp));
 
+            if(mBook1File.Text.Equals(mBook2File.Text) && mBook1File.Text.EndsWith(".csv")) {
+                MessageBox.Show("Cannot compare a csv file to itself.");
+                return;
+            }
+
             // old spreadsheet
             //Excel._Worksheet sheet1 = (Excel._Worksheet)mBook1.ActiveSheet;
             Object Item1 = mBook1SheetBox.SelectedItem;
