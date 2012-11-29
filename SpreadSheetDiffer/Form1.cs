@@ -59,11 +59,6 @@ namespace SpreadSheetDiffer
             temp[2] = "New Value";
             oFile.WriteLine(String.Join(delimiter, temp));
 
-            if(mBook1File.Text.Equals(mBook2File.Text) && mBook1File.Text.EndsWith(".csv")) {
-                MessageBox.Show("Cannot compare a csv file to itself.");
-                return;
-            }
-
             // old spreadsheet
             Object Item1 = mBook1SheetBox.SelectedItem;
             if (Item1 == null)
@@ -183,6 +178,12 @@ namespace SpreadSheetDiffer
                     mBook1 = null;
                 }
 
+                if (fWin.FileName.Equals(mBook2File.Text) && fWin.FileName.EndsWith(".csv"))
+                {
+                    MessageBox.Show("Cannot compare a csv file to itself.");
+                    return;
+                }
+
                 // Open the workbook selected in the file dialog.
                 mBook1File.Text = fWin.FileName;
                 mBook1 = (Excel._Workbook)(mExcel.Workbooks.Add(fWin.FileName));
@@ -222,6 +223,12 @@ namespace SpreadSheetDiffer
                 {
                     mBook2.Close(false);
                     mBook2 = null;
+                }
+
+                if (fWin.FileName.Equals(mBook1File.Text) && fWin.FileName.EndsWith(".csv"))
+                {
+                    MessageBox.Show("Cannot compare a csv file to itself.");
+                    return;
                 }
 
                 // Open the workbook selected in the dialog.
@@ -267,13 +274,19 @@ namespace SpreadSheetDiffer
         {
             // Refrences to the first workbook to be diffed.
             mBook1Sheets = null;
-            mBook1.Close();
-            mBook1 = null;
+            if (mBook1 != null)
+            {
+                mBook1.Close();
+                mBook1 = null;
+            }
 
             // Refrences to the second workbook to be diffed.
             mBook2Sheets = null;
-            mBook2.Close();
-            mBook2 = null;
+            if (mBook2 != null)
+            {
+                mBook2.Close();
+                mBook2 = null;
+            }
 
             // Refrence to the instance of Microsoft Excel being used.
             mExcel.Quit();
