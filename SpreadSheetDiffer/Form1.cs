@@ -164,7 +164,7 @@ namespace SpreadSheetDiffer
 
             // Set the extensions and default folder path to be used by the dialog.
             fWin.DefaultExt = "xlsx";
-            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xlsx;*.csv";
+            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xls;*.csv";
             fWin.InitialDirectory = 
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -210,7 +210,7 @@ namespace SpreadSheetDiffer
 
             // Set the extensions and default folder path to be used by the dialog.
             fWin.DefaultExt = "xlsx";
-            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xlsx;*.csv";
+            fWin.Filter = "Spreadsheet Files (*.xlsx;*.xls;*.csv)|*.xlsx;*.xls;*.csv";
             fWin.InitialDirectory =
                 Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
