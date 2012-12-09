@@ -1,0 +1,30 @@
+Excel-based Spreadsheet Differ
+
+Developed by Mark Zachacz and Michael Waite
+
+
+The Excel-based Spreadsheet Differ is a tool for finding the differences between two spreadsheet files. It requires a copy of Microsoft Excel to work. It outputs a .csv file that contains on each row what cell changed, what the old value was, and what the new value is.
+
+.xlsx, .xls, and .csv file formats are supported.
+
+
+
+Instructions:
+
+1. Click the top Browse button to select your first spreadsheet, then choose a worksheet of that spreadsheet (.xls, .csv, and .xlsx formats only).
+
+2. Click the second Browse button to select your second spreadsheet, then choose a worksheet of that spreadsheet (.xls, .csv, and .xlsx only).
+
+3. Click the bottom Browse button to select or create your destination file.
+
+4. Click Diff!
+
+
+
+Known issues:
+
+Closing any Excel windows while the Differ is running will cause the program to crash. If you do close an Excel window, you will have to open a new instance of the Excel-based Spreadsheet Differ.
+
+If two diffed spreadsheets have more than 1,048,576 cells different, the output .csv file will not be fully viewable in Excel - a program such as Notepad++ is recommended in shuch a case.
+
+This program was not designed to run on a distributed system, and any damages caused by doing so are solely the responsibility of the user.
