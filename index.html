@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html version="-//W3C//DTD XHTML 1.1//EN"
+      xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3.org/1999/xhtml
+                          http://www.w3.org/MarkUp/SCHEMA/xhtml11.xsd"
+>
+  <head>
+    <title>Spreadsheet Differ</title>
+  </head>
+  <body>
+    <h1>Spreadsheet Differ</h1>
+	
+	<p>The Excel-based Spreadsheet Differ is a tool for finding the differences between 
+	two spreadsheet files. It requires a copy of Microsoft Excel to work. It outputs a 
+	.csv file that contains on each row what cell changed, what the old value was, and 
+	what the new value is. .xlsx, .xls, and .csv file formats are supported.</p>
+	
+	<p><a href="downloads.html">Downloads</a></p>
+	<p><a href="https://github.com/Specter85/SpreadSheetDiffer">Project Page</a></p>
+
+	<h2>License</h2>
+	
+	<p>Developed by Mark Zachacz and Michael Waite</p>
+
+	<p>Copyright (c) 2012, Mark Zachacz and Michael Waite</p>
+	<p>All rights reserved.</p>
+	
+	<p>Redistribution and use in source and binary forms, with or without modification, 
+	are permitted provided that the following conditions are met:</p>
+	
+	<ul>
+		<li>Redistributions of source code must retain the above copyright notice, this 
+		list of conditions and the following disclaimer.</li>
+		<li>Redistributions in binary form must reproduce the above copyright notice, 
+		this list of conditions and the following disclaimer in the documentation and/or 
+		other materials provided with the distribution.</li>
+	</ul>
+
+	<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+	EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES 
+	OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
+	THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+	SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+	OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+	HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR 
+	TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+	SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
+	<h2>Instructions</h2>
+
+	<p>The program requires .net 4.5 to be installed on the computer. .net 4.5 can be found 
+	here: <a href="http://www.microsoft.com/net/">http://www.microsoft.com/net/</a></p>
+
+	
+	<ol>
+	<li>Click the top Browse button to select your first spreadsheet, then choose a worksheet 
+	of that spreadsheet (.xls, .csv, and .xlsx formats only).</li>
+	<li>Click the second Browse button to select your second spreadsheet, then choose a 
+	worksheet of that spreadsheet (.xls, .csv, and .xlsx only).</li>
+	<li>Click the bottom Browse button to select or create your destination file.</li>
+	<li>Click Diff!</li>
+	</ol>
+
+	<h2>Known issues</h2>
+
+	<ul>
+		<li>Closing any Excel windows while the Differ is running will cause the program to 
+		crash. If you do close an Excel window, you will have to open a new instance of the 
+		Excel-based Spreadsheet Differ.</li>
+		<li>If two diffed spreadsheets have more than 1,048,576 cells different, the output 
+		.csv file will not be fully viewable in Excel - a program such as Notepad++ is 
+		recommended in shuch a case.</li>
+		<li>This program was not designed to run on a distributed system, and any damages 
+		caused by doing so are solely the responsibility of the user.</li>
+	</ul>
+	
+	<p>
+		<a href="http://validator.w3.org/check?uri=referer"><img
+			src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" 
+			height="31" width="88" /></a>
+	</p>
+
+  </body>
+</html>
